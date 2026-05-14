@@ -1,0 +1,31 @@
+FROM nvidia/cuda:12.1.0-devel-ubuntu22.04
+
+# 1. Install system dependencies
+RUN apt-get update && apt-get install -y \
+    python3-pip \
+    python3-dev \
+    git \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# 2. Ensure python points to python3
+RUN ln -s /usr/bin/python3 /usr/bin/python
+
+# 3. Upgrade pip
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel
+
+# 4. Install PyTorch 2.5.1 (This version HAS the 'int1' attribute)
+RUN pip install --no-cache-dir torch==2.5.1 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+# 5. Install Unsloth and specific dependencies
+# We install these in a way that respects the new PyTorch version
+RUN pip install --no-cache-dir "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
+RUN pip install --no-cache-dir --no-deps xformers trl peft accelerate bitsandbytes
+
+# 6. Install data tools
+RUN pip install --no-cache-dir pandas tqdm datasets
+
+WORKDIR /app
+COPY . /app
+
+CMD ["python", "train_taqyim.py"]

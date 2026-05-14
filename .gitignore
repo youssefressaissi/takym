@@ -1,0 +1,24 @@
+# AI Models and Weights
+taqyim_model_lora/
+outputs/
+ollama_data/
+
+# Data Files (Keep these local to save space)
+*.csv
+*.jsonl
+
+# Python 
+__pycache__/
+.venv/
+*.py[cod]
+
+# System
+.DS_Store
+Thumbs.db
+taqyim_model_final/
+taqyim_model_final_10k/
+Miniconda3-latest-Linux-x86_64.sh
+taqyim_checkpoints/
+outputs/
+*.safetensors
+*.bin
