@@ -19,10 +19,10 @@ os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
 TRAIN_FILE = os.path.join(BASE_DIR, "..", "taqyim_train.csv")
 VAL_FILE   = os.path.join(BASE_DIR, "..", "taqyim_val.csv")
 
-OUTPUT_DIR = os.path.join(BASE_DIR, "..", "taqyim_model_final")
+OUTPUT_DIR = os.path.join(BASE_DIR, "..", "taqyim_model_Qwen_finetuned")
 CACHE_DIR  = os.path.join(BASE_DIR, "..", "unsloth_compiled_cache")
 
-MODEL_NAME = "unsloth/llama-3.2-1b-instruct"
+MODEL_NAME = "unsloth/Qwen2.5-3B-Instruct-bnb-4bit"
 
 max_seq_length = 300
 dtype = None
