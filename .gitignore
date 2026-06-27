@@ -22,3 +22,5 @@ taqyim_checkpoints/
 outputs/
 *.safetensors
 *.bin
+*.jinja
+
