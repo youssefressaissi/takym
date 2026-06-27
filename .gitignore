@@ -1,26 +1,70 @@
-# AI Models and Weights
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+taqyim_env/
+
+# =========================
+# Model checkpoints & weights
+# =========================
 taqyim_model_lora/
+taqyim_model_final/
+taqyim_model_final_10k/
+taqyim_checkpoints/
 outputs/
 ollama_data/
 
-# Data Files (Keep these local to save space)
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+
+checkpoint-*/
+
+# Hugging Face cache
+.cache/
+huggingface/
+
+# =========================
+# Large datasets
+# =========================
 *.csv
 *.jsonl
 
-# Python 
-__pycache__/
-.venv/
-*.py[cod]
+# =========================
+# Logs
+# =========================
+*.log
 
-# System
+# =========================
+# OS files
+# =========================
 .DS_Store
 Thumbs.db
+
+# =========================
+# Installers
+# =========================
+Miniconda3-latest-Linux-x86_64.sh
+# Training outputs
+outputs/
+Modeling_phase/transformers/outputs_qwen/
+
+# Final models
 taqyim_model_final/
 taqyim_model_final_10k/
-Miniconda3-latest-Linux-x86_64.sh
-taqyim_checkpoints/
-outputs/
-*.safetensors
-*.bin
-*.jinja
+Modeling_phase/taqyim_model_Qwen_finetuned/
 
+# Model weights
+*.safetensors
+*.pt
+optimizer.pt
+checkpoint-*/
+
+# Installer
+Miniconda3-latest-Linux-x86_64.shModeling_phase/ollama_instructed_finetuned/
+/Modeling_phase/ollama_instructed_finetuned/
